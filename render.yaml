@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: greenpaper-sales-order
+    runtime: python
+    buildCommand: pip install -r backend/requirements.txt
+    startCommand: python backend/server.py
+    envVars:
+      - key: SAP_USER
+        sync: false
+      - key: SAP_PASSWORD
+        sync: false
+      - key: SAP_BASE_URL
+        value: http://203.112.143.241:8000
+      - key: SAP_CLIENT
+        value: "100"
+      - key: SAP_TIMEOUT
+        value: "30"
